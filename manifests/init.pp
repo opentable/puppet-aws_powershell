@@ -8,6 +8,6 @@ class aws_powershell (
   validate_string($package_source)
   validate_string($download_dir)
 
-  class{'aws_powershell::install'} ->
+  class{'aws_powershell::install':} ->
   Class['aws_powershell']
 }
