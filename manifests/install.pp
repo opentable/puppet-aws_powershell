@@ -1,3 +1,12 @@
+# Author::    Paul Stack  (mailto:pstack@opentable.com)
+# Copyright:: Copyright (c) 2013 OpenTable Inc
+# License::   MIT
+
+# == Class: `aws_powershell::install`
+#
+# This private class is meant to be called from `aws_powrshell`.
+# It downloads the package and installs it.
+#
 class aws_powershell::install {
 
   if $caller_module_name != $module_name {

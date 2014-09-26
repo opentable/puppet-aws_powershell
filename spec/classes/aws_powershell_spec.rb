@@ -67,7 +67,7 @@ describe 'aws_powershell', :type => :class do
 
   context 'when trying to install aws_powershell on RedHat based systems' do
     let(:facts) {{
-      :osfamily  => 'radhat'
+      :osfamily  => 'redhat'
     }}
 
     it do
