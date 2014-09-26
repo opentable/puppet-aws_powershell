@@ -51,9 +51,14 @@ To install a custom version or a custom location:
 ####Class: `aws_powershell`
 
 **Parameters within `aws_powershell`:**
-#####`package_name` The name of the msi package to download
-#####`package_source` The http(s) location where the package can be located
-#####`download_dir` The directory to download the package to
+#####`package_name`
+The name of the msi package to download
+
+#####`package_source`
+The http(s) location where the package can be located
+
+#####`download_dir`
+The directory to download the package to
 
 ##Reference
 
