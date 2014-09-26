@@ -2,63 +2,61 @@ require 'spec_helper'
 
 describe 'aws_powershell', :type => :class do
 
-  let(:facts) { {
-      :osfamily  => 'Windows'
-  } }
-  let(:params) {{
-      :package_name    => 'AWSToolsAndSDKForNet.msi',
-      :package_source  => 'http://sdk-for-net.amazonwebservices.com/latest',
-      :download_dir    => 'c:\temp'
+  let(:facts) {{
+    :osfamily  => 'Windows'
   }}
-
-  #it { should compile.with_all_deps }
+  let(:params) {{
+    :package_name    => 'AWSToolsAndSDKForNet.msi',
+    :package_source  => 'http://sdk-for-net.amazonwebservices.com/latest',
+    :download_dir    => 'c:\temp'
+  }}
 
   context 'using params defaults the install class' do
     it { should contain_class('aws_powershell::install') }
 
-    it { should contain_download_file('AWSToolsAndSDKForNet.msi')
-      .with_url('http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi')
-      .with_destination_directory('c:\temp')
-    }
+    it { should contain_download_file('AWSToolsAndSDKForNet.msi').with(
+      'url'                   => 'http://sdk-for-net.amazonwebservices.com/latest/AWSToolsAndSDKForNet.msi',
+      'destination_directory' => 'c:\temp'
+    )}
 
-    it { should contain_package('AWS Tools for Windows')
-      .with_ensure('installed')
-      .with_provider('windows')
-      .with_source('c:\temp\AWSToolsAndSDKForNet.msi')
-      .with_install_options('/qn')
-    }
+    it { should contain_package('AWS Tools for Windows').with(
+      'ensure'          => 'installed',
+      'provider'        => 'windows',
+      'source'          => 'c:\temp\AWSToolsAndSDKForNet.msi',
+      'install_options' => '/qn'
+    )}
   end
 
   context 'using an internal package provider the install class' do
 
-    let(:facts) { {
-        :osfamily  => 'Windows'
-    } }
+    let(:facts) {{
+      :osfamily  => 'Windows'
+    }}
     let(:params) {{
-        :package_name    => 'AWSTools.msi',
-        :package_source  => 'http://mypackageserver.com/windows',
-        :download_dir    => 'c:\temp'
+      :package_name    => 'AWSTools.msi',
+      :package_source  => 'http://mypackageserver.com/windows',
+      :download_dir    => 'c:\temp'
     }}
 
     it { should contain_class('aws_powershell::install') }
 
-    it { should contain_download_file('AWSTools.msi')
-      .with_url('http://mypackageserver.com/windows/AWSTools.msi')
-      .with_destination_directory('c:\temp')
-    }
+    it { should contain_download_file('AWSTools.msi').with(
+      'url'                   => 'http://mypackageserver.com/windows/AWSTools.msi',
+      'destination_directory' => 'c:\temp'
+    )}
 
-    it { should contain_package('AWS Tools for Windows')
-      .with_ensure('installed')
-      .with_provider('windows')
-      .with_source('c:\temp\AWSTools.msi')
-      .with_install_options('/qn')
-    }
+    it { should contain_package('AWS Tools for Windows').with(
+      'ensure'          => 'installed',
+      'provider'        => 'windows',
+      'source'          => 'c:\temp\AWSTools.msi',
+      'install_options' => '/qn'
+    )}
   end
 
   context 'when trying to install aws_powershell on Debian based systems' do
-    let(:facts) { {
-        :osfamily  => 'debian'
-    } }
+    let(:facts) {{
+      :osfamily  => 'debian'
+    }}
 
     it do
       expect {
@@ -68,9 +66,9 @@ describe 'aws_powershell', :type => :class do
   end
 
   context 'when trying to install aws_powershell on RedHat based systems' do
-    let(:facts) { {
-        :osfamily  => 'radhat'
-    } }
+    let(:facts) {{
+      :osfamily  => 'radhat'
+    }}
 
     it do
       expect {
