@@ -1,8 +1,0 @@
-name 'opentable/aws_powershell'
-version '0.1.0'
-author 'opentable'
-license 'MIT'
-summary 'Module that will install the AWS PowerShell tools to a Windows Server. This can be used to control AWS instances from PowerShell cmdlets'
-project_page 'https://github.com/opentable/puppet-aws_powershell'
-dependency    'puppetlabs/stdlib', '>=3.0.0'
-dependency    'opentable/download_file', '0.0.2'
