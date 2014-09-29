@@ -22,7 +22,8 @@ The aws_powershell module installs the AWS PowerShell command line tools. These 
 
 ##Module Description
 
-???
+The [AWS Tools for Windows PowerShell](http://aws.amazon.com/powershell/) lets developers and administrators manage their AWS services from the Windows
+PowerShell scripting environment. Now you can manage your AWS resources with the same Windows PowerShell tools you use to manage your Windows environment.
 
 ##Setup
 ###What download_file affects
