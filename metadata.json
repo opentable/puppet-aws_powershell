@@ -1,21 +1,21 @@
 {
-  "name": "opentable/aws_powershell",
-  "version": "0.1.0",
+  "name": "opentable-aws_powershell",
+  "version": "1.0.0",
   "author": "Paul Stack <pstack@opentable.com>",
   "license": "MIT",
   "summary": "A module that will install the AWS PowerShell tools to a Windows Server. This can be used to control AWS instances from PowerShell cmdlets",
   "source": "https://github.com/opentable/puppet-aws_powershell",
-  "project_page": "(https://forge.puppetlabs.com/opentable/aws_powershell)",
+  "project_page": "https://forge.puppetlabs.com/opentable/aws_powershell",
   "issues_url": "https://github.com/opentable/puppet-aws_powershell/issues",
   "tags": ["windows", "aws", "powershell"],
   "operatingsystem_support": [
     {
     "operatingsystem":"Windows",
     "operatingsystemrelease":[ "2008R2", "2012", "2012R2" ]
-    },
-   ]
+    }
+  ],
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">=3.0.0 <5.0.0" },
-    { "name": "opentable/downloadfile", "version_requirement": ">= 0.0.2" },
+    { "name": "opentable/downloadfile", "version_requirement": ">= 0.0.2" }
   ]
 }
