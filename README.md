@@ -36,14 +36,18 @@ PowerShell scripting environment. Now you can manage your AWS resources with the
 
 To install with defaults
 
+```puppet
    include aws_powershell
+```
 
 To install a custom version or a custom location:
 
+```puppet
    class { 'aws_powershell':
      package_name   => 'MyPackageName.msi',
      package_source => 'http://mypackagelocation.com'
   }
+```
 
 ##Usage
 
