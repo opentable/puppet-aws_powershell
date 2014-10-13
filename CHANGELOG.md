@@ -1,3 +1,8 @@
+##2014-10-13 - Release 1.1.0
+###Summary
+
+  Updating dowload_file dependency to latest version
+
 ##2014-10-13 - Release 1.0.1
 ###Summary
 
